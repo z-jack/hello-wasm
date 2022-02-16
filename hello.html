@@ -1770,9 +1770,14 @@
     </script>
     <script async type="text/javascript" src="hello.js"></script>
     <script>
-      // emcc main.cpp -s WASM=1 -o hello.html -s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']"
+      // emcc main.cpp -s WASM=1 -o hello.js -s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']"
+      function toCharPtr(str) {
+        const ptr = allocate(intArrayFromString(str), ALLOC_NORMAL);
+        return ptr;
+      }
+
       setTimeout(() => {
-        console.log(Module.ccall("test", "string", ["string"], "ccc"));
+        console.log(UTF8ToString(_test(toCharPtr("cccaaa"))));
       }, 1000);
     </script>
   </body>

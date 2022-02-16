@@ -30,7 +30,7 @@ char *EMSCRIPTEN_KEEPALIVE test(char *a) {
   sort(num.begin(), num.end());
   string s = string(a) + to_string(num[2]) + to_string(n.id);
   char *o = new char[s.length() + 1];
-  memcpy(o, s.c_str());
+  memcpy(o, s.c_str(), s.length());
   return o;
 }
 

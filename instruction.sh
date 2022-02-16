@@ -1,0 +1,1 @@
+emcc main.cpp -s WASM=1 -o hello.js -s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']"
