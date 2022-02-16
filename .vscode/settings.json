@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.dataflow": "json",
+    "xstring": "cpp",
+    "vector": "cpp"
+  }
+}
